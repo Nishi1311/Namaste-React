@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--///////////////////////////////////////////////in html
+    <div>
+        <h1>Hello World</h1>
+    </div>
+
+    /////////////////////////////////////////in javascript
+    <div id="container"></div>
+    <script>
+        
+        const h1=document.createElement('h1')
+        h1.innerHTML='Hello World'
+         
+         document.getElementById('container').appendChild(h1)
+    </script>-->
+    <div id="container"></div>
+   
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script>
+      
+    const h1=React.createElement('div',{},React.createElement('div',{},[React.createElement('h1',{},'hello'),React.createElement('h1',{},'hello nishi')]))
+    const root=ReactDOM.createRoot( document.getElementById('container'))
+    root.render(h1)
+        </script>
+
+    
+</body>
+</html>
+
+<!--Note:1. ordering of script tag matters,if you will put cdn links at last then we will not able to see hello and hello nishi as through cdn only we are able to write react in project.
+2. as i have made div whose id is container as a root so whatever is written inside that, it will be replaced by hello and hello nishi
+3.and whatever is written above and below element will be like that only
+4.here h1 varible is an object not a h1 tag.....React.createElement will create an object and render method will convert that object to HTML element.
+5.as soon as div became nested ,it will be very difficult to write ,understand and handle so to avoid this ...there comes a concept of JSX
+6.so it is not true that React is only written in JSX we can also  write using React.createElement but yeah it bcome complicated when size  is increased
+7.if there is sibling for <h1>hello</h1> then write each of them inside []-->
